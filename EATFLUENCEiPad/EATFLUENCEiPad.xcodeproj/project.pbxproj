@@ -1,0 +1,585 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 77;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		F57BB24B2E071EBA0024CC32 /* FoodPostEntity+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = F57BB24A2E071EBA0024CC32 /* FoodPostEntity+CoreDataProperties.swift */; };
+		F57BB24C2E071EBA0024CC32 /* FoodPostEntity+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = F57BB2492E071EBA0024CC32 /* FoodPostEntity+CoreDataClass.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		F57BB20F2E0701BE0024CC32 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = F57BB1EF2E0701BC0024CC32 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = F57BB1F62E0701BC0024CC32;
+			remoteInfo = EATFLUENCEiPad;
+		};
+		F57BB2192E0701BE0024CC32 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = F57BB1EF2E0701BC0024CC32 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = F57BB1F62E0701BC0024CC32;
+			remoteInfo = EATFLUENCEiPad;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		F57BB1F72E0701BC0024CC32 /* EATFLUENCEiPad.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = EATFLUENCEiPad.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		F57BB20E2E0701BE0024CC32 /* EATFLUENCEiPadTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = EATFLUENCEiPadTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		F57BB2182E0701BE0024CC32 /* EATFLUENCEiPadUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = EATFLUENCEiPadUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		F57BB2492E071EBA0024CC32 /* FoodPostEntity+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "FoodPostEntity+CoreDataClass.swift"; sourceTree = "<group>"; };
+		F57BB24A2E071EBA0024CC32 /* FoodPostEntity+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "FoodPostEntity+CoreDataProperties.swift"; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFileSystemSynchronizedBuildFileExceptionSet section */
+		F57BB2202E0701BE0024CC32 /* Exceptions for "EATFLUENCEiPad" folder in "EATFLUENCEiPad" target */ = {
+			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
+			membershipExceptions = (
+				Info.plist,
+			);
+			target = F57BB1F62E0701BC0024CC32 /* EATFLUENCEiPad */;
+		};
+/* End PBXFileSystemSynchronizedBuildFileExceptionSet section */
+
+/* Begin PBXFileSystemSynchronizedRootGroup section */
+		F57BB1F92E0701BC0024CC32 /* EATFLUENCEiPad */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			exceptions = (
+				F57BB2202E0701BE0024CC32 /* Exceptions for "EATFLUENCEiPad" folder in "EATFLUENCEiPad" target */,
+			);
+			path = EATFLUENCEiPad;
+			sourceTree = "<group>";
+		};
+		F57BB2112E0701BE0024CC32 /* EATFLUENCEiPadTests */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			path = EATFLUENCEiPadTests;
+			sourceTree = "<group>";
+		};
+		F57BB21B2E0701BE0024CC32 /* EATFLUENCEiPadUITests */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			path = EATFLUENCEiPadUITests;
+			sourceTree = "<group>";
+		};
+/* End PBXFileSystemSynchronizedRootGroup section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		F57BB1F42E0701BC0024CC32 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F57BB20B2E0701BE0024CC32 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F57BB2152E0701BE0024CC32 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		F57BB1EE2E0701BC0024CC32 = {
+			isa = PBXGroup;
+			children = (
+				F57BB2492E071EBA0024CC32 /* FoodPostEntity+CoreDataClass.swift */,
+				F57BB24A2E071EBA0024CC32 /* FoodPostEntity+CoreDataProperties.swift */,
+				F57BB1F92E0701BC0024CC32 /* EATFLUENCEiPad */,
+				F57BB2112E0701BE0024CC32 /* EATFLUENCEiPadTests */,
+				F57BB21B2E0701BE0024CC32 /* EATFLUENCEiPadUITests */,
+				F57BB1F82E0701BC0024CC32 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		F57BB1F82E0701BC0024CC32 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				F57BB1F72E0701BC0024CC32 /* EATFLUENCEiPad.app */,
+				F57BB20E2E0701BE0024CC32 /* EATFLUENCEiPadTests.xctest */,
+				F57BB2182E0701BE0024CC32 /* EATFLUENCEiPadUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		F57BB1F62E0701BC0024CC32 /* EATFLUENCEiPad */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = F57BB2212E0701BE0024CC32 /* Build configuration list for PBXNativeTarget "EATFLUENCEiPad" */;
+			buildPhases = (
+				F57BB1F32E0701BC0024CC32 /* Sources */,
+				F57BB1F42E0701BC0024CC32 /* Frameworks */,
+				F57BB1F52E0701BC0024CC32 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			fileSystemSynchronizedGroups = (
+				F57BB1F92E0701BC0024CC32 /* EATFLUENCEiPad */,
+			);
+			name = EATFLUENCEiPad;
+			packageProductDependencies = (
+			);
+			productName = EATFLUENCEiPad;
+			productReference = F57BB1F72E0701BC0024CC32 /* EATFLUENCEiPad.app */;
+			productType = "com.apple.product-type.application";
+		};
+		F57BB20D2E0701BE0024CC32 /* EATFLUENCEiPadTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = F57BB2262E0701BE0024CC32 /* Build configuration list for PBXNativeTarget "EATFLUENCEiPadTests" */;
+			buildPhases = (
+				F57BB20A2E0701BE0024CC32 /* Sources */,
+				F57BB20B2E0701BE0024CC32 /* Frameworks */,
+				F57BB20C2E0701BE0024CC32 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				F57BB2102E0701BE0024CC32 /* PBXTargetDependency */,
+			);
+			fileSystemSynchronizedGroups = (
+				F57BB2112E0701BE0024CC32 /* EATFLUENCEiPadTests */,
+			);
+			name = EATFLUENCEiPadTests;
+			packageProductDependencies = (
+			);
+			productName = EATFLUENCEiPadTests;
+			productReference = F57BB20E2E0701BE0024CC32 /* EATFLUENCEiPadTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		F57BB2172E0701BE0024CC32 /* EATFLUENCEiPadUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = F57BB2292E0701BE0024CC32 /* Build configuration list for PBXNativeTarget "EATFLUENCEiPadUITests" */;
+			buildPhases = (
+				F57BB2142E0701BE0024CC32 /* Sources */,
+				F57BB2152E0701BE0024CC32 /* Frameworks */,
+				F57BB2162E0701BE0024CC32 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				F57BB21A2E0701BE0024CC32 /* PBXTargetDependency */,
+			);
+			fileSystemSynchronizedGroups = (
+				F57BB21B2E0701BE0024CC32 /* EATFLUENCEiPadUITests */,
+			);
+			name = EATFLUENCEiPadUITests;
+			packageProductDependencies = (
+			);
+			productName = EATFLUENCEiPadUITests;
+			productReference = F57BB2182E0701BE0024CC32 /* EATFLUENCEiPadUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		F57BB1EF2E0701BC0024CC32 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = 1;
+				LastSwiftUpdateCheck = 1620;
+				LastUpgradeCheck = 1620;
+				TargetAttributes = {
+					F57BB1F62E0701BC0024CC32 = {
+						CreatedOnToolsVersion = 16.2;
+					};
+					F57BB20D2E0701BE0024CC32 = {
+						CreatedOnToolsVersion = 16.2;
+						TestTargetID = F57BB1F62E0701BC0024CC32;
+					};
+					F57BB2172E0701BE0024CC32 = {
+						CreatedOnToolsVersion = 16.2;
+						TestTargetID = F57BB1F62E0701BC0024CC32;
+					};
+				};
+			};
+			buildConfigurationList = F57BB1F22E0701BC0024CC32 /* Build configuration list for PBXProject "EATFLUENCEiPad" */;
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = F57BB1EE2E0701BC0024CC32;
+			minimizedProjectReferenceProxies = 1;
+			preferredProjectObjectVersion = 77;
+			productRefGroup = F57BB1F82E0701BC0024CC32 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				F57BB1F62E0701BC0024CC32 /* EATFLUENCEiPad */,
+				F57BB20D2E0701BE0024CC32 /* EATFLUENCEiPadTests */,
+				F57BB2172E0701BE0024CC32 /* EATFLUENCEiPadUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		F57BB1F52E0701BC0024CC32 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F57BB20C2E0701BE0024CC32 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F57BB2162E0701BE0024CC32 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		F57BB1F32E0701BC0024CC32 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F57BB24B2E071EBA0024CC32 /* FoodPostEntity+CoreDataProperties.swift in Sources */,
+				F57BB24C2E071EBA0024CC32 /* FoodPostEntity+CoreDataClass.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F57BB20A2E0701BE0024CC32 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F57BB2142E0701BE0024CC32 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		F57BB2102E0701BE0024CC32 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = F57BB1F62E0701BC0024CC32 /* EATFLUENCEiPad */;
+			targetProxy = F57BB20F2E0701BE0024CC32 /* PBXContainerItemProxy */;
+		};
+		F57BB21A2E0701BE0024CC32 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = F57BB1F62E0701BC0024CC32 /* EATFLUENCEiPad */;
+			targetProxy = F57BB2192E0701BE0024CC32 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		F57BB2222E0701BE0024CC32 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = EATFLUENCEiPad/EATFLUENCEiPad.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"EATFLUENCEiPad/Preview Content\"";
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = EATFLUENCEiPad/Info.plist;
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.it21219498.EATFLUENCEiPad;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		F57BB2232E0701BE0024CC32 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = EATFLUENCEiPad/EATFLUENCEiPad.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"EATFLUENCEiPad/Preview Content\"";
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = EATFLUENCEiPad/Info.plist;
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.it21219498.EATFLUENCEiPad;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		F57BB2242E0701BE0024CC32 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 18.2;
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "DEBUG $(inherited)";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		F57BB2252E0701BE0024CC32 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 18.2;
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		F57BB2272E0701BE0024CC32 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 18.2;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.it21219498.EATFLUENCEiPadTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/EATFLUENCEiPad.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/EATFLUENCEiPad";
+			};
+			name = Debug;
+		};
+		F57BB2282E0701BE0024CC32 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 18.2;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.it21219498.EATFLUENCEiPadTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/EATFLUENCEiPad.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/EATFLUENCEiPad";
+			};
+			name = Release;
+		};
+		F57BB22A2E0701BE0024CC32 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.it21219498.EATFLUENCEiPadUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = EATFLUENCEiPad;
+			};
+			name = Debug;
+		};
+		F57BB22B2E0701BE0024CC32 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.it21219498.EATFLUENCEiPadUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = EATFLUENCEiPad;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		F57BB1F22E0701BC0024CC32 /* Build configuration list for PBXProject "EATFLUENCEiPad" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				F57BB2242E0701BE0024CC32 /* Debug */,
+				F57BB2252E0701BE0024CC32 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		F57BB2212E0701BE0024CC32 /* Build configuration list for PBXNativeTarget "EATFLUENCEiPad" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				F57BB2222E0701BE0024CC32 /* Debug */,
+				F57BB2232E0701BE0024CC32 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		F57BB2262E0701BE0024CC32 /* Build configuration list for PBXNativeTarget "EATFLUENCEiPadTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				F57BB2272E0701BE0024CC32 /* Debug */,
+				F57BB2282E0701BE0024CC32 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		F57BB2292E0701BE0024CC32 /* Build configuration list for PBXNativeTarget "EATFLUENCEiPadUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				F57BB22A2E0701BE0024CC32 /* Debug */,
+				F57BB22B2E0701BE0024CC32 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = F57BB1EF2E0701BC0024CC32 /* Project object */;
+}
