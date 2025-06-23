@@ -41,7 +41,9 @@ struct RecipeListView: View {
                     }
                 }
             }
-            .sheet(isPresented: $showAddRecipe) {
+            .sheet(isPresented: $showAddRecipe, onDismiss: {
+                viewModel.fetchRecipes() // ✅ Refresh recipes immediately after adding
+            }) {
                 AddRecipeView()
             }
             .sheet(isPresented: $showEditRecipe) {
