@@ -5,57 +5,52 @@ struct FoodPostCardView: View {
 
     var body: some View {
         VStack(alignment: .leading, spacing: 8) {
-            // Profile + Username + Like
+            // User info row
             HStack {
-                Image("defaultProfile") // Ensure added to Assets.xcassets
+                Image("defaultProfile")  // Replace with actual user image if available
                     .resizable()
-                    .scaledToFill()
-                    .frame(width: 44, height: 44)
+                    .frame(width: 40, height: 40)
                     .clipShape(Circle())
-                    .overlay(Circle().stroke(Color.gray.opacity(0.3), lineWidth: 1))
+                    .shadow(radius: 2)
 
                 Text(post.username ?? "Unknown User")
                     .font(.headline)
-                    .foregroundColor(.primary)
 
                 Spacer()
 
-                Button(action: {
-                    // TODO: Add like functionality
-                }) {
-                    Image(systemName: "heart")
-                        .foregroundColor(.red.opacity(0.7))
-                }
-                .buttonStyle(BorderlessButtonStyle())
+                Image(systemName: "heart.fill")
+                    .foregroundColor(.accentColor)
             }
-            .padding(.horizontal)
 
-            // Post Image
-            if let data = post.imageData, let image = UIImage(data: data) {
-                Image(uiImage: image)
-                    .resizable()
-                    .scaledToFill()
-                    .frame(height: 250)
-                    .clipped()
-                    .cornerRadius(12)
-                    .shadow(radius: 3)
-                    .padding(.horizontal)
+            // Post image
+            if let data = post.imageData, let uiImage = UIImage(data: data) {
+                ZStack(alignment: .bottomLeading) {
+                    Image(uiImage: uiImage)
+                        .resizable()
+                        .aspectRatio(contentMode: .fill)
+                        .frame(height: 200)
+                        .clipped()
+                        .cornerRadius(10)
+
+                    // Optional gradient overlay for text readability
+                    LinearGradient(
+                        gradient: Gradient(colors: [Color.black.opacity(0.4), .clear]),
+                        startPoint: .bottom,
+                        endPoint: .top
+                    )
+                    .cornerRadius(10)
+                }
             }
 
             // Caption
-            if let caption = post.caption, !caption.isEmpty {
-                Text(caption)
-                    .font(.body)
-                    .foregroundColor(.secondary)
-                    .padding(.horizontal)
-                    .padding(.bottom, 6)
-            }
+            Text(post.caption ?? "")
+                .font(.body)
+                .padding(.horizontal, 4)
+                .foregroundColor(.primary)
         }
-        .background(Color(.secondarySystemBackground))
-        .cornerRadius(14)
-        .shadow(color: Color.black.opacity(0.1), radius: 4, x: 0, y: 2)
-        .padding(.horizontal)
-        .padding(.vertical, 6)
+        .padding()
+        .background(Color(.systemBackground))
+        .cornerRadius(12)
+        .shadow(color: .black.opacity(0.1), radius: 4, x: 0, y: 2)
     }
 }
-

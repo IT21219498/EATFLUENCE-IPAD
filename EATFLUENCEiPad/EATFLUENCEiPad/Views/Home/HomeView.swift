@@ -7,14 +7,15 @@ struct HomeView: View {
     var body: some View {
         NavigationStack {
             ScrollView {
-                VStack(spacing: 16) {
+                LazyVGrid(columns: [GridItem(.adaptive(minimum: 300), spacing: 16)], spacing: 16) {
                     ForEach(viewModel.posts, id: \.self) { post in
                         FoodPostCardView(post: post)
                     }
                 }
                 .padding()
             }
-            .navigationTitle("Home Feed")
+            .background(Color.backgroundColor.opacity(0.05))
+            .navigationTitle("🍽 Home Feed")
             .toolbar {
                 ToolbarItem(placement: .navigationBarTrailing) {
                     Button(action: {
@@ -23,17 +24,17 @@ struct HomeView: View {
                         Label("Add Post", systemImage: "plus")
                     }
                     .accessibilityIdentifier("addPostButton")
+                    .keyboardShortcut("n", modifiers: [.command]) // CMD + N shortcut
                 }
             }
             .onAppear {
                 viewModel.fetchPosts()
             }
             .sheet(isPresented: $showAddPost, onDismiss: {
-                viewModel.fetchPosts()  // Refresh after adding
+                viewModel.fetchPosts()
             }) {
                 AddPostView()
             }
         }
     }
 }
-

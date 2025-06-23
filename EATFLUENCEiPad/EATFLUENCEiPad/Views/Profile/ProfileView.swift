@@ -6,19 +6,21 @@ struct ProfileView: View {
     var body: some View {
         NavigationStack {
             ScrollView {
-                VStack(spacing: 16) {
-                    // Profile Image & Username
-                    VStack {
+                VStack(spacing: 24) {
+                    // Profile Header
+                    VStack(spacing: 12) {
                         Image(viewModel.userData.profileImageName)
                             .resizable()
+                            .aspectRatio(contentMode: .fill)
                             .frame(width: 120, height: 120)
                             .clipShape(Circle())
-                            .shadow(radius: 5)
+                            .shadow(color: .black.opacity(0.1), radius: 8, x: 0, y: 4)
                             .accessibilityLabel("Profile picture")
 
                         Text(viewModel.userData.username)
-                            .font(.title2)
-                            .fontWeight(.semibold)
+                            .font(.title)
+                            .fontWeight(.bold)
+                            .foregroundColor(.primaryColor)
                             .accessibilityIdentifier("profileUsername")
                     }
 
@@ -31,38 +33,20 @@ struct ProfileView: View {
 
                     Divider()
 
-                    // Posted Recipes
-                    SectionHeader(title: "My Posts")
-                    if viewModel.postedRecipes.isEmpty {
-                        Text("No posts yet")
-                            .font(.caption)
-                            .foregroundColor(.gray)
-                    } else {
-                        ForEach(viewModel.postedRecipes, id: \.self) { recipe in
-                            RecipeSummaryCard(recipe: recipe)
-                        }
-                    }
+                    // My Posts
+                    section(title: "My Posts", recipes: viewModel.postedRecipes, emptyMessage: "No posts yet")
 
                     Divider()
 
                     // Saved Recipes
-                    SectionHeader(title: "Saved Recipes")
-                    if viewModel.savedRecipes.isEmpty {
-                        Text("No saved recipes yet")
-                            .font(.caption)
-                            .foregroundColor(.gray)
-                    } else {
-                        ForEach(viewModel.savedRecipes, id: \.self) { recipe in
-                            RecipeSummaryCard(recipe: recipe)
-                        }
-                    }
+                    section(title: "Saved Recipes", recipes: viewModel.savedRecipes, emptyMessage: "No saved recipes yet")
 
                     // Action Buttons
                     HStack(spacing: 20) {
                         Button("Edit Profile") {
                             viewModel.editProfile()
                         }
-                        .buttonStyle(ProfileButtonStyle())
+                        .buttonStyle(ProfileButtonStyle(color: .accentColor))
 
                         Button("Log Out") {
                             viewModel.logout()
@@ -75,14 +59,37 @@ struct ProfileView: View {
                 .padding()
             }
             .navigationTitle("Profile")
+            .background(Color.backgroundColor.ignoresSafeArea())
             .onAppear {
                 viewModel.fetchRecipes()
             }
         }
     }
+
+    @ViewBuilder
+    private func section(title: String, recipes: [RecipeEntity], emptyMessage: String) -> some View {
+        VStack(alignment: .leading, spacing: 8) {
+            Text(title)
+                .font(.headline)
+                .foregroundColor(.highlightColor)
+
+            if recipes.isEmpty {
+                Text(emptyMessage)
+                    .font(.caption)
+                    .foregroundColor(.secondaryTextColor)
+                    .padding(.vertical, 4)
+            } else {
+                LazyVGrid(columns: [GridItem(.flexible()), GridItem(.flexible())], spacing: 12) {
+                    ForEach(recipes, id: \.self) { recipe in
+                        RecipeSummaryCard(recipe: recipe)
+                    }
+                }
+            }
+        }
+    }
 }
 
-// MARK: - Supporting Views
+// MARK: - Stat View
 struct StatView: View {
     let label: String
     let value: Int
@@ -90,53 +97,46 @@ struct StatView: View {
     var body: some View {
         VStack {
             Text("\(value)")
-                .font(.headline)
+                .font(.title3)
+                .fontWeight(.semibold)
+                .foregroundColor(.primaryColor)
             Text(label)
                 .font(.caption)
-                .foregroundColor(.gray)
+                .foregroundColor(.secondaryTextColor)
         }
     }
 }
 
-struct SectionHeader: View {
-    let title: String
-
-    var body: some View {
-        HStack {
-            Text(title)
-                .font(.headline)
-            Spacer()
-        }
-        .padding(.vertical, 5)
-    }
-}
-
+// MARK: - Recipe Card
 struct RecipeSummaryCard: View {
     let recipe: RecipeEntity
 
     var body: some View {
-        HStack {
+        VStack(alignment: .leading, spacing: 6) {
             if let data = recipe.imageData, let image = UIImage(data: data) {
                 Image(uiImage: image)
                     .resizable()
-                    .frame(width: 60, height: 60)
+                    .scaledToFill()
+                    .frame(height: 100)
+                    .clipped()
                     .cornerRadius(8)
             }
 
             Text(recipe.title ?? "Untitled")
                 .font(.subheadline)
-
-            Spacer()
+                .foregroundColor(.primary)
+                .lineLimit(1)
         }
         .padding()
-        .background(Color(.systemBackground))
-        .cornerRadius(10)
+        .background(Color.white)
+        .cornerRadius(12)
         .shadow(color: .black.opacity(0.05), radius: 3)
     }
 }
 
+// MARK: - Button Style
 struct ProfileButtonStyle: ButtonStyle {
-    var color: Color = Color("PrimaryColor")
+    var color: Color = .primaryColor
 
     func makeBody(configuration: Configuration) -> some View {
         configuration.label
@@ -144,6 +144,7 @@ struct ProfileButtonStyle: ButtonStyle {
             .padding()
             .background(color.opacity(configuration.isPressed ? 0.7 : 1))
             .foregroundColor(.white)
-            .cornerRadius(10)
+            .cornerRadius(12)
+            .shadow(color: color.opacity(0.3), radius: 4, x: 0, y: 2)
     }
 }

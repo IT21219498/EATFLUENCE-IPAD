@@ -6,27 +6,30 @@ struct RecipeListView: View {
     @State private var selectedRecipe: RecipeEntity?
     @State private var showEditRecipe = false
 
+    let columns = [
+        GridItem(.adaptive(minimum: 300), spacing: 16)
+    ]
+
     var body: some View {
         NavigationStack {
-            List {
-                ForEach(viewModel.recipes, id: \.self) { recipe in
-                    RecipeCardView(
-                        recipe: recipe,
-                        onDelete: {
-                            viewModel.delete(recipe)
-                        },
-                        onTogglePrivacy: {
-                            viewModel.togglePrivacy(for: recipe)
-                        },
-                        onEdit: {
+            ScrollView {
+                LazyVGrid(columns: columns, spacing: 16) {
+                    ForEach(viewModel.recipes, id: \.self) { recipe in
+                        RecipeCardView(
+                            recipe: recipe,
+                            onDelete: { viewModel.delete(recipe) },
+                            onTogglePrivacy: { viewModel.togglePrivacy(for: recipe) },
+                            onEdit: {
+                                selectedRecipe = recipe
+                                showEditRecipe = true
+                            }
+                        )
+                        .onTapGesture {
                             selectedRecipe = recipe
-                            showEditRecipe = true
                         }
-                    )
-                    .onTapGesture {
-                        selectedRecipe = recipe
                     }
                 }
+                .padding()
             }
             .navigationTitle("My Recipes")
             .toolbar {
@@ -39,7 +42,7 @@ struct RecipeListView: View {
                 }
             }
             .sheet(isPresented: $showAddRecipe) {
-                AddRecipeView() // AddRecipeView creates its own VM or uses env context
+                AddRecipeView()
             }
             .sheet(isPresented: $showEditRecipe) {
                 if let recipe = selectedRecipe {

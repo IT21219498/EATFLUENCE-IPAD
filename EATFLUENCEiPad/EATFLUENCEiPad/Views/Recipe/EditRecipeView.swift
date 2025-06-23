@@ -14,62 +14,66 @@ struct EditRecipeView: View {
     @State private var showImagePicker = false
 
     var body: some View {
-        Form {
-            Section("Title") {
-                TextField("Title", text: $title)
-            }
+        NavigationStack {
+            Form {
+                Section(header: Text("Title")) {
+                    TextField("Title", text: $title)
+                }
 
-            Section("Ingredients") {
-                TextField("Ingredients", text: $ingredients, axis: .vertical)
-                    .lineLimit(3...6)
-            }
+                Section(header: Text("Ingredients")) {
+                    TextField("Ingredients", text: $ingredients, axis: .vertical)
+                        .lineLimit(3...6)
+                }
 
-            Section("Instructions") {
-                TextField("Instructions", text: $instructions, axis: .vertical)
-                    .lineLimit(4...10)
-            }
+                Section(header: Text("Instructions")) {
+                    TextField("Instructions", text: $instructions, axis: .vertical)
+                        .lineLimit(4...10)
+                }
 
-            Section {
-                Toggle("Make Public", isOn: $isPublic)
-            }
+                Section {
+                    Toggle("Make Public", isOn: $isPublic)
+                }
 
-            Section("Image") {
-                Button {
-                    showImagePicker = true
-                } label: {
-                    if let selectedImage = selectedImage {
-                        Image(uiImage: selectedImage)
-                            .resizable()
-                            .scaledToFit()
-                            .frame(height: 150)
-                    } else if let data = recipe.imageData, let image = UIImage(data: data) {
-                        Image(uiImage: image)
-                            .resizable()
-                            .scaledToFit()
-                            .frame(height: 150)
-                    } else {
-                        Label("Select Image", systemImage: "photo.on.rectangle")
-                            .foregroundColor(.blue)
+                Section(header: Text("Image")) {
+                    Button {
+                        showImagePicker = true
+                    } label: {
+                        if let selectedImage = selectedImage {
+                            Image(uiImage: selectedImage)
+                                .resizable()
+                                .scaledToFit()
+                                .frame(height: 150)
+                                .cornerRadius(10)
+                                .shadow(radius: 2)
+                        } else if let data = recipe.imageData, let image = UIImage(data: data) {
+                            Image(uiImage: image)
+                                .resizable()
+                                .scaledToFit()
+                                .frame(height: 150)
+                                .cornerRadius(10)
+                                .shadow(radius: 2)
+                        } else {
+                            Label("Select Image", systemImage: "photo.on.rectangle")
+                                .foregroundColor(.accentColor)
+                        }
                     }
                 }
-            }
 
-            Section {
-                Button("Save Changes") {
-                    saveChanges()
+                Section {
+                    Button("Save Changes", action: saveChanges)
+                        .disabled(title.trimmingCharacters(in: .whitespaces).isEmpty)
                 }
-                .disabled(title.trimmingCharacters(in: .whitespaces).isEmpty)
             }
-        }
-        .sheet(isPresented: $showImagePicker) {
-            ImagePicker(image: $selectedImage)
-        }
-        .navigationTitle("Edit Recipe")
-        .onAppear {
-            title = recipe.title ?? ""
-            ingredients = recipe.ingredients ?? ""
-            instructions = recipe.instructions ?? ""
-            isPublic = recipe.isPublic
+            .navigationTitle("Edit Recipe")
+            .sheet(isPresented: $showImagePicker) {
+                ImagePicker(image: $selectedImage)
+            }
+            .onAppear {
+                title = recipe.title ?? ""
+                ingredients = recipe.ingredients ?? ""
+                instructions = recipe.instructions ?? ""
+                isPublic = recipe.isPublic
+            }
         }
     }
 

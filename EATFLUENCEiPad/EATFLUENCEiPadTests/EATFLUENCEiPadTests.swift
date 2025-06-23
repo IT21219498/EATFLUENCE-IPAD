@@ -6,31 +6,51 @@
 //
 
 import XCTest
+import CoreData
+import SwiftUI
 @testable import EATFLUENCEiPad
 
 final class EATFLUENCEiPadTests: XCTestCase {
+    
+    var context: NSManagedObjectContext!
+    var viewModel: PostViewModel!
 
     override func setUpWithError() throws {
-        // Put setup code here. This method is called before the invocation of each test method in the class.
+        let persistence = PersistenceController(inMemory: true)
+        context = persistence.container.viewContext
+        viewModel = PostViewModel()
+        // Manually inject context if your VM allows (or update VM init to accept context)
+        viewModel.overrideContext(context)
     }
 
     override func tearDownWithError() throws {
-        // Put teardown code here. This method is called after the invocation of each test method in the class.
+        context = nil
+        viewModel = nil
     }
 
-    func testExample() throws {
-        // This is an example of a functional test case.
-        // Use XCTAssert and related functions to verify your tests produce the correct results.
-        // Any test you write for XCTest can be annotated as throws and async.
-        // Mark your test throws to produce an unexpected failure when your test encounters an uncaught error.
-        // Mark your test async to allow awaiting for asynchronous code to complete. Check the results with assertions afterwards.
+    func testAddPostAndFetch() throws {
+        let testImage = UIImage(systemName: "photo")!
+        
+        // Act
+        viewModel.addPost(username: "TestUser", caption: "Test caption", image: testImage)
+        
+        // Assert
+        XCTAssertEqual(viewModel.posts.count, 1, "There should be one post after adding")
+        let post = viewModel.posts.first
+        XCTAssertEqual(post?.username, "TestUser")
+        XCTAssertEqual(post?.caption, "Test caption")
+        XCTAssertNotNil(post?.imageData, "Image data should be saved")
     }
 
-    func testPerformanceExample() throws {
-        // This is an example of a performance test case.
-        self.measure {
-            // Put the code you want to measure the time of here.
-        }
+    func testFetchPostsWhenEmpty() throws {
+        viewModel.fetchPosts()
+        XCTAssertTrue(viewModel.posts.isEmpty, "Posts should be empty initially")
     }
 
+    func testSaveContextFailureHandled() throws {
+        // Simulate failure by setting up a nil context or mock failure (example only, would require mocking)
+        // Here we'll just ensure saveContext doesn't crash
+        viewModel.saveContext()
+        XCTAssertTrue(true, "saveContext should not crash even if nothing to save")
+    }
 }

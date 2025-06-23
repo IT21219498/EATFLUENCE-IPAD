@@ -5,7 +5,15 @@ import SwiftUI
 class PostViewModel: ObservableObject {
     @Published var posts: [FoodPostEntity] = []
     
-    private let viewContext = PersistenceController.shared.container.viewContext
+    private var viewContext: NSManagedObjectContext
+        
+        init(context: NSManagedObjectContext = PersistenceController.shared.container.viewContext) {
+            self.viewContext = context
+        }
+
+        func overrideContext(_ context: NSManagedObjectContext) {
+            self.viewContext = context
+        }
 
     func fetchPosts() {
         let request: NSFetchRequest<FoodPostEntity> = FoodPostEntity.fetchRequest()
